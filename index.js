@@ -15,6 +15,10 @@ mongoose.connect(process.env.MONGODB_URI, {
     .then(() => console.log('Connected to MongoDB'))
     .catch((err) => console.log(err))
 
+// Middlewares
+app.use(express.json());
+app.use(helmet());
+app.use(morgan("common"));
 
 
 app.listen(8800, () => {
